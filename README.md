@@ -1,24 +1,57 @@
-# README
+# gurunavi 簡易仕様書
+位置情報から近くのお店を検索するアプリ
+### 作者
+仲西貴優
+### アプリ名
+gurunavi
+### git
+https://github.com/nakanishi-takahiro-0518/gurunavi
+### 対象OS
+特になし
+### 対象ブラウザ
+Chromeで確認済み
+### 開発環境/言語
+vagrant
+virtualbox
+VScode(Visual Stadio Code)
+ruby 2.5.7
+ruby on rails 5.2.4.1
+JavaScript(ES6)
+JQuery 1.12.4
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 機能一覧
+・Google Map
+　・Geolocation APIを使用し取得した結果をGoogle Mapに反映する。
+ ・レストラン検索
+ 　・ぐるなびレストラン検索APIを使用し、現在地周辺の飲食店を検索する。
+ ・レストラン情報取得
+ 　・ぐるなびレストラン検索APIを使用し、飲食店の詳細情報を取得する。
+  
+## 画面一覧
+ ・検索画面
+ 　・条件を指定し、レストランを検索する。
+ ・一覧画面
+ 　・検索結果の飲食店を一覧表示する。
+ ・詳細画面
+ 　・選択した飲食店の詳細情報を表示する。
+  
+## 使用しているAPI,SDKなど
+ぐるなびレストラン検索API
+Geolocation API
+Maps JavaScript API
+Geocoding API
 
-Things you may want to cover:
+## コンセプト
+現在地から近くの飲食店を見つけることができる。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## こだわったポイント
+現在地から近くの店を探すことができるというコンセプトのため、視覚的にわかりやすくするためにgoogle mapで表示できるようにした。
+## アドバイスして欲しいポイント
+コントローラーの記述がかなり長くなってしまったので不要な部分を省略することや、修正することによって読みやすいコードにしたい。
+現在地の取得の際、現在地とかなり外れたところが取得されてしまうことがある。そのため、検索ページでは表示していた現在地のマーカーを出力していたが、詳細ページでは現在地のマーカーを出力しなかった。
+一覧表示の際に現在地からの距離を算出できるようにしたい。上記と同様の理由で距離の値に大きなござが生まれることが懸念されるため、実装しなかった。
+かなり質素なサイトになってしまったので、レイアウトや色付けをしたい。
+## デザイン面でこだわったポイント
+できるだけぐるなびサイトやそのた検索サイトを見て、自分なりに使いやすいようなレイアウトにした。
+## 自己評価
+8/10 今回の課題を通してAPIのデータのやり取りやjavascriptの知識がより深まった。心残りなのはデザインが質素すぎる部分と、コードが長くなりすぎた気がする点である。
