@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gurunavi</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= include_gon %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <nav class='nav navbar-nav navbar-left' >
+      <%= link_to "Gurunavi", root_path ,{class: "nav-link"} %>
+      </nav>
+    </div>
+  </header>
+  <div class="main">
+    <%= yield %>
+  </div>
+  <footer>©︎ Takahiro.Nakanishi 2020</footer>
+  </body>
+</html>

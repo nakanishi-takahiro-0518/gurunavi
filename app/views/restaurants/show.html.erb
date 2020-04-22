@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="showcontent col-lg-10">
+
+            <% @shop.each do |s| %>
+                <div class="main-content">
+                    <p><span class="category">業態</span><%= s[:category] %></p>
+                    <h1><%= s[:name] %></h1>
+                    <p class="name-kana"><%= s[:name_kana] %></p>
+                    <h3><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><%= s[:tel] %></h3>
+                    <p>営業時間：<%= s[:opentime] %></p>
+                    <p>休業日：<%= s[:holiday] %></p>
+                    <p>住所：<%= s[:address] %></p>
+                </div>
+                <div class="sub-content">
+                    <p class="pr_short"><%= s[:pr_short] %></p>
+                    <p class="pr_long"><%= s[:pr_long] %></p>
+                    <image src=<%= s[:image1] %> >
+                    <image src=<%= s[:image2] %> >
+                </div>
+            <% end %>
+        <div id="map-canvas" style="height:600px;　width:600px"></div>
+
+        </div>
+        <div class="col-lg-1"></div>
+
+    </div>
+</div>
+
+<script src="//maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>"></script>
+<%= javascript_include_tag "show.js" %>

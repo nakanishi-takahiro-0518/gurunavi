@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+    <div class="col-lg-1"></div>
+        <div class="col-lg-10" id="showResult">
+            <div class="total-count">
+            <h1>検索結果</h1>
+            </div>
+            <div id="content">
+            <%# 検索結果を一覧表示 %>
+            <% @shops.each do |shop| %>
+                <%= link_to rest_path(shop[:id]) do %>
+                    <div class="row content-item">
+                    <div class="col-lg-6">
+                    <% if shop[:image] == "" %>
+                        <image src="assets/no-image.jpg" class="image" >
+                    <% else %>
+                        <image src=<%= shop[:image] %> class="image" >
+                    <% end %>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2><%= shop[:name] %></h2>
+                        <p class="sub-item"><%= shop[:category] %></p>
+                        <p class="sub-item"><%= shop[:access_line] %><%= shop[:access_station] %> <%=shop[:access_walk] %>分 <%=shop[:access_note] %></p>
+                        <% if shop[:budget] != "" %>
+                            <p class="sub-item">平均予算：<%= shop[:budget] %>円</p>
+                        <% end %>
+                    </div>
+                    </div>
+                <% end %>
+            <% end %>
+            <%= paginate @shops %>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+

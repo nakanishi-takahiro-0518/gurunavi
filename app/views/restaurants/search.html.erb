@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+        <div class="row">
+        <% if @error %>
+            <h2 class="error"><%= @error %></h2>
+        <% end %>
+            <h1>検索条件入力</h1>
+
+            <p id="result"></p>
+
+            <%= form_tag(rests_path, :method => 'get') do %>
+                <%= text_field_tag :freeword, "", class: "col-lg-12" %>
+
+                <%= check_box_tag :no_smoking  %>
+                <%= label_tag :no_smoking, "禁煙席あり" %>
+
+                <%= check_box_tag :card  %>
+                <%= label_tag :card, "カード利用可" %>
+
+                <%= check_box_tag :bottomless_cup  %>
+                <%= label_tag :bottomless_cup, "飲み放題あり" %>
+
+                <%= check_box_tag :buffet  %>
+                <%= label_tag :buffet, "食べ放題あり" %>
+
+                <%= check_box_tag :parking  %>
+                <%= label_tag :parking, "駐車場あり" %>
+
+                <%= check_box_tag :wifi  %>
+                <%= label_tag :wifi, "wifiあり" %>
+
+                <div class="kensaku">
+                    <p>検索範囲の半径を選択してください。<%= select_tag(:radius, options_for_select([["300m","1"], ["500m", "2"], ["1000m","3"], ["2000m","4"], ["3000m","5"]], :selected => "2"), class: "select") %></p>
+                </div>
+
+                <%= submit_tag '検索する', class: "btn btn-primary col-lg-12" %>
+            <% end %>
+        </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+
+
+
+<div id="map-canvas" style="height:600px;　width:600px"></div>
+
+<script src="//maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>"></script>
+<%= javascript_include_tag "search.js" %>
+
