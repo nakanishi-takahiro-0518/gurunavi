@@ -6,6 +6,8 @@
 - gurunavi
 ### git
 - https://github.com/nakanishi-takahiro-0518/gurunavi
+### デプロイ
+- https://takahirogurunavi.herokuapp.com/
 ### 対象OS
 - 特になし
 ### 対象ブラウザ
