@@ -19,7 +19,13 @@
 - ruby 2.5.7  
 - ruby on rails 5.2.4.1  
 - JavaScript(ES6)  
-- JQuery 1.12.4  
+- JQuery 1.12.4 
+### 使用上の注意
+- アプリケーション直下に.envファイルを作成し、以下の記述をする必要があります。
+```
+GNAVI_API_KEY = '取得したぐるなびのAPIキー'
+GOOGLE_MAPS_API_KEY = '取得したgooglemapのAPIキー'
+```
 
 ## 機能一覧
 - Google Map  
