@@ -17,7 +17,7 @@ class RestaurantsController < ApplicationController
         require 'active_support/core_ext'
 
         uri = "https://api.gnavi.co.jp/RestSearchAPI/v3/"
-        access_key = "e1a2b74634545386f827f1b357b5f6b9"
+        access_key = ENV['GNAVI_API_KEY']
         url = uri << "?keyid=" << access_key << "&hit_per_page=100"  << "&latitude=" << lat << "&longitude=" << lng << "&range=" << range
         # 各パラメータが送られていたらURLを上書き
         if params[:freeword]
