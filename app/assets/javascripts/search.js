@@ -13,9 +13,6 @@ if (navigator.geolocation) {
       let lat = data.latitude;
       let lng = data.longitude;
 
-      // アラート表示
-      alert("あなたの現在位置は、\n[" + lat + "," + lng + "]\nです。");
-
       // 位置情報
       let latlng = new google.maps.LatLng(lat, lng);
       // Google Mapsに書き出し

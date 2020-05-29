@@ -28,5 +28,5 @@
     </div>
 </div>
 
-<script src="//maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>"></script>
+<script async defer src="//maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=showMap"></script>
 <%= javascript_include_tag "show.js" %>
